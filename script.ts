@@ -29,7 +29,7 @@ function charCount(str: string) {
   var result = {};
   //loop over string, for each character
   for (var i = 0; i < str.length; i++) {
-    var char = str[i];
+    var char = str[i].toLocaleLowerCase();
     //if the char is a number/letter and key in object, add one to count
     if (result[char] > 0) {
       result[char]++;
@@ -42,3 +42,4 @@ function charCount(str: string) {
   //retutn object at end
   return result;
 }
+console.log(charCount("hello tHere!"));
