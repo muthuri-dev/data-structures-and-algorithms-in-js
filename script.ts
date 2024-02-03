@@ -42,4 +42,19 @@ function charCount(str: string) {
   //retutn object at end
   return result;
 }
-console.log(charCount("hello tHere!"));
+//console.log(charCount("hello tHere!"));
+function charCount2(str: any | string) {
+  var obj = {};
+  for (var char in str) {
+    char = char.toLocaleLowerCase();
+    if (/[a-z0-9]/.test(char)) {
+      if (obj[char] > 0) {
+        obj[char]++;
+      } else {
+        obj[char] = 1;
+      }
+    }
+  }
+  return obj;
+}
+console.log(charCount2("Hello there it is muthuridev"));
