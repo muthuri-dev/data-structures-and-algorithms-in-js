@@ -49,11 +49,33 @@ const words = fs.readFileSync("./data/data.txt", "utf8").split("\n");
 words.forEach((word) => hashTable.insert(word.trim(), true));
 
 // getting user input
-const userInput = prompt(
-  "Guess name which exists ☺️ and I will tell you if it exists ☺️"
-);
+// const userInput = prompt(
+//   "Guess name which exists ☺️ and I will tell you if it exists ☺️"
+// );
+//const word = "kennedy";
+// const exists = hashTable.search(word);
+// if (exists) {
+//   console.log("Word exists in the hash table.");
+// } else {
+//   console.log("Word does not exist in the hash table.");
+// }
+// console.log(exists);
 
 // Checking if userinput exists in the hash table
-const exists = hashTable.search(userInput);
+//const exists = hashTable.search(userInput);
+function lookupWord(word) {
+  //const word = document.getElementById("inputWord").value.trim();
+  const exists = hashTable.search(word);
+  const resultElement = document.getElementById("result");
+  if (exists) {
+    resultElement.textContent = "Word exists in the hash table.";
+  } else {
+    resultElement.textContent = "Word does not exist in the hash table.";
+  }
+  console.log(exists);
+  // resultElement.textContent = exists
+  //   ? "Word exists in the hash table."
+  //   : "Word does not exist in the hash table.";
+}
 
-console.log(exists);
+//console.log(exists);
